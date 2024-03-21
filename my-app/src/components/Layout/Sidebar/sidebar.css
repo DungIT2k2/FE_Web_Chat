@@ -55,8 +55,11 @@
 .Item:hover{
     border-left: 5px solid rgb(3, 154, 255);
     color: rgb(3, 154, 255);
+    background-color: rgb(214, 225, 234);
 }
 .Item_active{
     border-left: 5px solid rgb(3, 154, 255);
     color: rgb(3, 154, 255);
+    background-color: rgb(214, 225, 234);
 }
+
