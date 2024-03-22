@@ -1,10 +1,49 @@
 import './sidebar.css'
 import avt from '../../../img/avt.jpg';
-import Item from './item';
+// import Item from './item';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faMessage, faCalendar, faTag, faFile, faGear, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react';
 
-function Sidebar() {
+const categorys = [{
+    id: 1,
+    icon: faHouse,
+    title: "PROPERTIES"
+}, {
+    id: 2,
+    icon: faMessage,
+    title: "CHAT"
+}, {
+    id: 3,
+    icon: faCalendar,
+    title: "CALENDER",
+}, {
+    id: 4,
+    icon: faTag,
+    title: "OFFERS",
+}, {
+    id: 5,
+    icon: faFile,
+    title: "DOCUMENTS",
+}, {
+    id: 6,
+    icon: faGear,
+    title: "SETTINGS",
+}
+];
+
+function Sidebar({ onCategorySelect }) {
+    const [choose, setChoose] = useState(2);
+
+    // useEffect(() => {
+    //     const currentItem = document.getElementsByClassName('Item')[choose-1];
+    //     currentItem.classList.add('Item_active');
+
+    //     return () => {
+    //         currentItem.classList.remove('Item_active');
+    //     }
+    // }, [choose])
+
     return (
         <div className="sidebar">
             <div className="userContainer">
@@ -12,39 +51,20 @@ function Sidebar() {
                     <img src={avt} alt="" className="circle-image"></img>
 
                 </div>
-                <span>Tiến Dũng <FontAwesomeIcon icon={faAngleDown} /></span> 
+                <span>Tiến Dũng <FontAwesomeIcon icon={faAngleDown} /></span>
             </div>
+
             <div className="itemContainer">
-                <Item
-                    id="PROPERTIES"
-                    icon={faHouse}
-                    title="PROPERTIES"
-                />
-                <Item
-                    id="CHAT"
-                    icon={faMessage}
-                    title="CHAT"
-                />
-                <Item
-                    id="CALENDER"
-                    icon={faCalendar}
-                    title="CALENDER"
-                />
-                <Item
-                    id="OFFERS"
-                    icon={faTag}
-                    title="OFFERS"
-                />
-                <Item
-                    id="DOCUMENTS"
-                    icon={faFile}
-                    title="DOCUMENTS"
-                />
-                <Item
-                    id="SETTINGS"
-                    icon={faGear}
-                    title="SETTINGS"
-                />
+                {categorys.map(category => (
+                    <div className={`Item ${choose === category.id ? 'Item_active' : ''}`} key={category.id} onClick={() => {
+                        onCategorySelect(category.id);
+                        setChoose(category.id)
+                    }}>
+                        <div className="iconItem" ><FontAwesomeIcon icon={category.icon} /> </div>
+                        <label className="nameItem">{category.title}</label>
+                    </div>
+                )
+                )}
             </div>
         </div>
     );
