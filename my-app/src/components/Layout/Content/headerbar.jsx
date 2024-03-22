@@ -4,7 +4,7 @@ import { faBell } from '@fortawesome/free-solid-svg-icons'
 
 function HeaderBar() {
     return (
-        <div className='headerbar'>
+        <div className='header_bar'>
             <span>Status:
                 <select className='status'>
                     <option>Sale</option>
@@ -12,7 +12,7 @@ function HeaderBar() {
                 </select>
             </span>
 
-            <div className="iconheader"><FontAwesomeIcon icon={faBell} /></div>
+            <div className="icon_header"><FontAwesomeIcon icon={faBell} /></div>
         </div>
     );
 }

@@ -6,7 +6,7 @@
     background-color: whitesmoke;
 }
 
-.headerbar {
+.header_bar {
     display: flex;
     justify-content: end;
     width: 100%;
@@ -20,7 +20,7 @@
     margin-top: 15px;
 }
 
-.iconheader {
+.icon_header {
     margin-top: 15px;
     margin-right: 50px;
     margin-left: 45px;
@@ -35,11 +35,11 @@
     background-color: whitesmoke;
 }
 
-.bodycontent {
+.body_content {
     /* border: 2px solid green; */
 }
 
-.namecontent {
+.name_content {
     margin-left: 80px;
     font-size: 35px;
     font-weight: bold;
@@ -66,7 +66,7 @@
 
 }
 
-.listchat {
+.list_chat {
     padding: 10px;
     margin-left: 100px;
     width: 35%;
@@ -80,8 +80,8 @@
     height: 100%;
 }
 
-.itemlistchat {
-    margin-top: 15px;
+.item_list_chat {
+    margin-bottom: 15px;
     display: flex;
     width: 100%;
     background-color: white;
@@ -89,27 +89,27 @@
     border-radius: 10px;
 }
 
-.imguser {
+.img_user {
     /* background-color: red; */
     width: 20%;
     align-items: center;
 }
 
-.infousers {
+.info_users {
     /* background-color: yellow; */
     width: 60%;
 }
 
-.nameuser {
+.name_user {
     font-weight: bold;
 }
 
-.noteuser {
+.note_user {
     /* background-color: green; */
     width: 20%;
 }
 
-.countmessage {
+.count_message {
     background-color: red;
     border-radius: 50%;
     width: 20px;
@@ -119,9 +119,9 @@
     margin-top: 5px;
 }
 
-.imguser,
-.infousers,
-.noteuser {
+.img_user,
+.info_users,    
+.note_user {
     padding: 18px;
 }
 
@@ -138,9 +138,27 @@
     overflow: hidden;
 }
 
-.allitemlistchat {
+.circle-image-smaller {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circle-container-smaller {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.all_item_list_chat {
     overflow: scroll;
     height: 530px;
+    background-color: white;
 }
 
 .info_user_message {
@@ -168,6 +186,17 @@
     height: 400px;
 }
 
+.user_message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line_message_your{
+    display: flex;
+    margin-left: 15px;
+}
+
 .line_message {
     padding: 10px;
     width: fit-content;
@@ -176,7 +205,9 @@
 }
 
 .your {
-    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
     align-self: flex-start;
     background-color: rgb(191, 199, 203);
 }

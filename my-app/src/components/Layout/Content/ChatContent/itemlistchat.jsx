@@ -1,26 +1,22 @@
 import avtuser from '../../../../img/avt.jpg'
 
-function ItemListChat({ dataItem }) {
+function ItemListChat({ dataItem, onChoose }) {
     const dataLastMessage = dataItem.message[dataItem.message.length - 1]; 
 
-    const handleClick = () => {
-        localStorage.setItem('chooseUser', dataItem.id);
-    }
-
     return (
-        <div className='itemlistchat' id={dataItem.id} onClick={handleClick}>
-            <div className="imguser">
+        <div className='item_list_chat' id={dataItem.id} onClick={() => {onChoose(dataItem.id)}}>
+            <div className="img_user">
                 <div className="circle-container-small">
                     <img src={avtuser} alt="" className="circle-image-small"></img>
                 </div>
             </div>
-            <div className="infousers">
-                <p className='nameuser'>{dataItem.name}</p>
+            <div className="info_users">
+                <p className='name_user'>{dataItem.name}</p>
                 <p className='lastmessage'>{dataLastMessage.chat}</p>
             </div>
-            <div className="noteuser">
+            <div className="note_user">
                 <p className='lasttime'>{dataLastMessage.time}</p>
-                <div className='countmessage'>1</div>
+                <div className='count_message'>1</div>
             </div>
         </div>
     );
