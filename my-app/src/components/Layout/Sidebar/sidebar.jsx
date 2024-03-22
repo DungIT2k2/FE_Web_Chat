@@ -35,15 +35,6 @@ const categorys = [{
 function Sidebar({ onCategorySelect }) {
     const [choose, setChoose] = useState(2);
 
-    // useEffect(() => {
-    //     const currentItem = document.getElementsByClassName('Item')[choose-1];
-    //     currentItem.classList.add('Item_active');
-
-    //     return () => {
-    //         currentItem.classList.remove('Item_active');
-    //     }
-    // }, [choose])
-
     return (
         <div className="sidebar">
             <div className="userContainer">

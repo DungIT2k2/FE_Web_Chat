@@ -2,9 +2,13 @@ import avtuser from '../../../../img/avt.jpg'
 
 function ItemListChat({ dataItem }) {
     const dataLastMessage = dataItem.message[dataItem.message.length - 1]; 
-    console.log(dataLastMessage);
+
+    const handleClick = () => {
+        localStorage.setItem('chooseUser', dataItem.id);
+    }
+
     return (
-        <div className='itemlistchat'>
+        <div className='itemlistchat' id={dataItem.id} onClick={handleClick}>
             <div className="imguser">
                 <div className="circle-container-small">
                     <img src={avtuser} alt="" className="circle-image-small"></img>

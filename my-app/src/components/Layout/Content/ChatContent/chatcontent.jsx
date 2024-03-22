@@ -1,3 +1,4 @@
+import { createContext, useEffect, useState } from "react";
 import ListChat from "./listchat";
 import Message from "./message";
 
@@ -13,7 +14,7 @@ const chatdata = [
             { chat: "I'm fine", time: "10:11", people: "me" }],
     },
     {
-        id: 1,
+        id: 2,
         name: "John",
         nation: "America",
         message: [
@@ -27,6 +28,10 @@ const check = localStorage.getItem('chatdata');
 if (!check) {
     localStorage.setItem('chatdata', JSON.stringify(chatdata));
 }
+
+export const ChatContext = createContext();
+
+localStorage.setItem('chooseUser', 1);
 
 function ChatContent() {
     return (
